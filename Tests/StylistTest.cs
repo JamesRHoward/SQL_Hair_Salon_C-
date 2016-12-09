@@ -24,7 +24,7 @@ namespace HairSalon
       Assert.Equal(0, result);
     }
     [Fact]
-    public void Test_SaveStylistToDataBase()
+    public void Stylist_SaveStylistToDataBase()
     {
       Stylist testStylist = new Stylist("Jake");
       testStylist.Save();
@@ -34,11 +34,18 @@ namespace HairSalon
       Assert.Equal(1, result);
     }
     [Fact]
-    public void Test_ReturnsTrueForSameStylist()
+    public void Stylist_ReturnsTrueForSameStylist()
     {
       Stylist firstStylist = new Stylist("Jake");
       Stylist secondStylist = new Stylist("Jake");
       Assert.Equal(firstStylist, secondStylist);
+    }
+    [Fact]
+    public void Stylist_IdPassesCorrectly()
+    {
+      Stylist testStylist = new Stylist("Jake");
+      int result = testStylist.GetId();
+      Assert.Equal(0, result);
     }
   }
 }
