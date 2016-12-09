@@ -25,5 +25,16 @@ namespace HairSalon
 
       Assert.Equal(0, result);
     }
+
+    [Fact]
+    public void Client_SaveToDataBase()
+    {
+      Client testClient = new Client("Dave", 1);
+      testClient.Save();
+
+      int result = Client.GetAll().Count;
+
+      Assert.Equal(1, result);
+    }
   }
 }
