@@ -16,5 +16,12 @@ namespace HairSalon
     {
       Stylist.DeleteAll();
     }
+    [Fact]
+    public void Stylist_DataBaseEmptyAtFirst()
+    {
+      int result = Stylist.GetAll().Count;
+
+      Assert.Equal(0, result);
+    }
   }
 }
