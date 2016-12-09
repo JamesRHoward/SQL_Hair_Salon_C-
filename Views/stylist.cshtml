@@ -1,0 +1,18 @@
+<h3>Clients of @Model.GetName()</h3>
+
+<ul>
+  @foreach (var client in @Model.GetAll())
+  {
+    <li>@client.GetName()</a></li>
+  }
+</ul>
+
+<form action="/client/add/@Model.GetId()" method="post">
+  <label for="client-name">Add client to @Model.GetName()</label>
+  <input name="client-name" required="required">
+  <button type="submit">Add Client</button>
+</form>
+
+<form action="/">
+  <button type="submit">Return Home</button>
+</form>
