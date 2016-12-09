@@ -1,0 +1,12 @@
+<h1>Hair Salon App</h1>
+<h3>Stylists:</h3>
+<ul>
+  @foreach(var stylist in @Model)
+  {
+    <li><a href="/@stylist.GetId()">@stylist.GetName()</a></li>
+  }
+</ul>
+
+<form action="/stylist/new">
+  <button type="submit">Create new stylist position</button>
+</form>

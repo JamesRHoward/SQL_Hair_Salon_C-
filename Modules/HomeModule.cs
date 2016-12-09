@@ -16,10 +16,10 @@ namespace HairSalon
         return View["stylist_form.cshtml"];
       };
       Post["/stylist/add"] = _ => {
-        Stylist newStylist = newStylist(Form.Request["stylist-name"]);
+        Stylist newStylist = new Stylist(Request.Form["stylist-name"]);
         newStylist.Save();
         List<Stylist> allStylists = Stylist.GetAll();
-        return View["index.cshtml"];
+        return View["index.cshtml", allStylists];
       };
     }
   }
