@@ -60,6 +60,7 @@ namespace HairSalon
         int stylistId = rdr.GetInt32(0);
         string stylistName = rdr.GetString(1);
         Stylist newStylist = new Stylist(stylistName, stylistId);
+        allStylists.Add(newStylist);
       }
       if(rdr!=null)
       {
@@ -69,6 +70,7 @@ namespace HairSalon
       {
         conn.Close();
       }
+      return allStylists;
     }
   }
 }
