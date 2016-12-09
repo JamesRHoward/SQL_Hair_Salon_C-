@@ -33,5 +33,12 @@ namespace HairSalon
 
       Assert.Equal(1, result);
     }
+    [Fact]
+    public void Test_ReturnsTrueForSameStylist()
+    {
+      Stylist firstStylist = new Stylist("Jake");
+      Stylist secondStylist = new Stylist("Jake");
+      Assert.Equal(firstStylist, secondStylist);
+    }
   }
 }
