@@ -1,9 +1,9 @@
 <h3>Clients of @Model.GetName()</h3>
 
 <ul>
-  @foreach (var client in @Model.GetAll())
+  @foreach (var client in @Model.GetClients())
   {
-    <li>@client.GetName()</a></li>
+    <li>@client.GetName()</li>
   }
 </ul>
 
