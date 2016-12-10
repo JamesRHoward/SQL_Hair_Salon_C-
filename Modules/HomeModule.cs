@@ -51,6 +51,10 @@ namespace HairSalon
         List<Stylist> allStylists = Stylist.GetAll();
         return View["index.cshtml", allStylists];
       };
+      Get["/clients"] = _ => {
+        List<Client> allClients = Client.GetAll();
+        return View["clients.cshtml", allClients];
+      };
     }
   }
 }

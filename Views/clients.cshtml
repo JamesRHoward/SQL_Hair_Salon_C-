@@ -1,0 +1,11 @@
+<h3>Clients:</h3>
+<ul>
+  @foreach(var client in @Model)
+  {
+    <li><a href="/clients/GetId()">@client.GetName()</a></li>
+  }
+</ul>
+
+<form action="/">
+  <button type="submit">Return Home</button>
+</form>
