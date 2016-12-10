@@ -1,0 +1,9 @@
+<h2>Delete stylist: @Model.GetName()</h2>
+<form action="/stylist/delete/@Model.GetId()" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <button type="submit">Delete</button>
+</form>
+
+<form action="/">
+  <button type="submit">Return Home</button>
+</form>
