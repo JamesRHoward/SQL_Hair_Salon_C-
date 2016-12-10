@@ -1,0 +1,11 @@
+<h2>Edit client: @Model.GetName()</h2>
+<form action="/client/edit/@Model.GetId()" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <input name="client-id" type="hidden" value="@Model.GetId()">
+  <label for="new-client-name">Edit Client name</label>
+  <button type="submit">Submit</button>
+</form>
+
+<form action="/">
+  <button type="submit">Return Home</button>
+</form>
