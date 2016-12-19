@@ -10,7 +10,7 @@ namespace HairSalon
   {
     public ClientTest()
     {
-      DBConfiguration.ConnectionString = "Data Source=DESKTOP-86RQO71; Initial Catalog=hair_salon_test; Integrated Security=SSPI;";
+      DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb; Initial Catalog=hair_salon_test; Integrated Security=SSPI;";
     }
 
     public void Dispose()
@@ -25,7 +25,13 @@ namespace HairSalon
 
       Assert.Equal(0, result);
     }
-
+    [Fact]
+    public void Client_ReturnsTrueForSameClient()
+    {
+      Client firstClient = new Client("Jake", 1);
+      Client secondClient = new Client("Jake", 1);
+      Assert.Equal(firstClient, secondClient);
+    }
     [Fact]
     public void Client_SaveToDataBase()
     {
