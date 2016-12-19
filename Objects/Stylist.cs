@@ -52,7 +52,7 @@ namespace HairSalon
       SqlDataReader rdr = null;
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("SELECT * FROM clients WHERE stylistId = @StylistId;", conn);
+      SqlCommand cmd = new SqlCommand("SELECT * FROM clients WHERE stylist_id = @StylistId;", conn);
       SqlParameter cuisineIdParameter = new SqlParameter();
       cuisineIdParameter.ParameterName = "@StylistId";
       cuisineIdParameter.Value = this.GetId();
