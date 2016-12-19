@@ -110,7 +110,7 @@ namespace HairSalon
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("INSERT INTO clients (name, stylistid) OUTPUT INSERTED.id VALUES (@ClientName, @ClientStylistId);", conn);
+      SqlCommand cmd = new SqlCommand("INSERT INTO clients (name, stylist_id) OUTPUT INSERTED.id VALUES (@ClientName, @ClientStylistId);", conn);
 
       SqlParameter clientNameParameter = new SqlParameter();
       clientNameParameter.ParameterName = "@ClientName";
@@ -177,7 +177,7 @@ namespace HairSalon
       SqlDataReader rdr;
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("UPDATE clients SET name = @NewName OUTPUT INSERTED.name WHERE id = @ClientId; UPDATE clients SET stylistId = @NewStylistId OUTPUT INSERTED.stylistId WHERE id = @ClientId;", conn);
+      SqlCommand cmd = new SqlCommand("UPDATE clients SET name = @NewName OUTPUT INSERTED.name WHERE id = @ClientId; UPDATE clients SET stylist_id = @NewStylistId OUTPUT INSERTED.stylist_id WHERE id = @ClientId;", conn);
 
       SqlParameter newNameParameter = new SqlParameter();
       newNameParameter.ParameterName = "@NewName";
